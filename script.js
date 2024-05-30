@@ -24,16 +24,37 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(`W: ${document.querySelector(".cell").clientWidth} x H: ${document.querySelector(".cell").clientHeight}`);
 
         // Debug section END
+
+        const cells = document.querySelectorAll(".cell");
+
+        // Color the cell black when the mouse enters the cell
+        cells.forEach((cell) => {
+            cell.addEventListener("mouseenter", () => {
+                cell.style.backgroundColor = "black";
+            });
+        });
+    }
+
+    function clearGrid() {
+        const cells = document.querySelectorAll(".cell");
+
+        cells.forEach((cell) => {
+            cell.remove();
+        });
     }
 
     createGrid(16);
 
-    const cells = document.querySelectorAll(".cell");
+    const gridButton = document.querySelector(".gridButton");
+    console.log(gridButton);
 
-    // Color the cell black when the mouse enters the cell
-    cells.forEach((cell) => {
-        cell.addEventListener("mouseenter", () => {
-            cell.style.backgroundColor = "black";
-        });
-    });
+    // When button is pressed, the user is prompted for the size of the new grid and the old one is cleared
+    gridButton.addEventListener("click", () => {
+        const userGridCount = prompt("How many columns and rows? (Min: 1 - Max: 100)");
+
+        if(userGridCount && (userGridCount > 0 && userGridCount <= 100)) {
+            clearGrid();
+            createGrid(userGridCount);
+        }
+    })
 })
