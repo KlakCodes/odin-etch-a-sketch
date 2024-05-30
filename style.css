@@ -27,3 +27,14 @@ body {
 .cell {
     background-color: white;
 }
+
+.gridButton {
+    width: 200px;
+    height: 75px;
+    border-radius: 10px;
+    border-style: none;
+    background-color: blueviolet;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+}

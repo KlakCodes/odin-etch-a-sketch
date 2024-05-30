@@ -50,11 +50,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // When button is pressed, the user is prompted for the size of the new grid and the old one is cleared
     gridButton.addEventListener("click", () => {
-        const userGridCount = prompt("How many columns and rows? (Min: 1 - Max: 100)");
+        // const userGridCount = prompt("How many columns and rows? (Min: 1 - Max: 100)");
 
-        if(userGridCount && (userGridCount > 0 && userGridCount <= 100)) {
-            clearGrid();
-            createGrid(userGridCount);
+        // if(userGridCount && (userGridCount > 0 && userGridCount <= 100)) {
+        //     clearGrid();
+        //     createGrid(userGridCount);
+        // }
+
+        const invalid = true;
+
+        while (invalid) {
+            const userGridCount = prompt("How many columns and rows? (Min: 1 - Max: 100)");
+
+            if (userGridCount && (userGridCount > 0 && userGridCount <= 100)) {
+                clearGrid();
+                createGrid(userGridCount);
+                invalid = false;
+            } else if (userGridCount === null) {
+                invalid = false;
+            }
         }
     })
 })
