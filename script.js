@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const cells = document.querySelectorAll(".cell");
 
-        // Color the cell black when the mouse enters the cell
+        // Color the cell in a random color when the mouse enters the cell
         cells.forEach((cell) => {
             cell.addEventListener("mouseenter", () => {
 
@@ -25,8 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     function randNum (max) {
                       return Math.floor(Math.random() * max);
                     }
-                  
-                    return `rgba(${randNum(256)}, ${randNum(256)}, ${randNum(256)}, 1)`
+                    return `rgb(${randNum(256)}, ${randNum(256)}, ${randNum(256)})`
                   }
 
                 cell.style.backgroundColor = randCol();
