@@ -10,22 +10,19 @@ body {
 
 .gridBody {
     display: flex;
-    flex-wrap: wrap row;
     justify-content: center;
     align-items: center;
     height: 100%;
 }
 
 .grid {
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid black;
     width: 500px;
     height: 500px;
-    border: 1px solid black;
 }
 
-.gridSquare {
-    display: inline-block;
-    margin: 0;
-    width: 10px;
-    height: 10px;
-    border: 1px dashed red;
+.cell {
+    background-color: yellow;
 }
